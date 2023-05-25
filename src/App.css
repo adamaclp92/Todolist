@@ -1,0 +1,35 @@
+.main_div {
+  justify-content: center;
+}
+
+.checked {
+  text-decoration: line-through;
+  animation-name: todoFading;
+  animation-duration: 0.5s;
+  opacity: 0.2;
+}
+
+.unchecked {
+  text-decoration: none;
+  animation-name: todoAppearing;
+  animation-duration: 0.5s;
+  opacity: 1;
+}
+
+@keyframes todoAppearing {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes todoFading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}

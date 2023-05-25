@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Task from "./components/Task";
 import TaskForm from "./components/TaskForm";
-import { FaPrayingHands } from "react-icons/fa";
-import { TbBeach } from "react-icons/tb";
-import { GiMuscleUp } from "react-icons/Gi";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -26,7 +23,6 @@ function App() {
 
   let doneCount = 0;
   let motivationalString = "Keep it going!";
-  let motivationalElemenet = <GiMuscleUp />;
 
   tasks.map((task) => {
     if (task.done) doneCount++;
@@ -34,12 +30,10 @@ function App() {
 
   if (tasks.length > 0 && doneCount === 0) {
     motivationalString = "Try to do at least one!";
-    motivationalElemenet = <FaPrayingHands />;
   }
 
   if (tasks.length === doneCount) {
     motivationalString = "Nice job for today!";
-    motivationalElemenet = <TbBeach />;
   }
 
   const addTask = (task) => {
@@ -85,7 +79,6 @@ function App() {
         <div className=" text-white mt-10 font-bold text-2xl mr-4">
           {motivationalString}
         </div>
-        <div className=" text-white mt-10 text-2xl">{motivationalElemenet}</div>
       </div>
 
       <TaskForm onAddTask={addTask} />

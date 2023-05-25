@@ -1,22 +1,24 @@
 import React from "react";
 
-import { IconContext } from "react-icons";
-import { AiFillCheckSquare } from "react-icons/ai";
-import { BsSquare } from "react-icons/bs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+import { faSquare } from "@fortawesome/free-solid-svg-icons";
 
 const CheckBox = ({ done, onClick }) => {
   return (
-    <IconContext.Provider value={{ color: "#0ea5e9" }}>
-      <div className="mt-1 mr-4">
-        <div className="text-2xl" onClick={onClick}>
-          {done && <AiFillCheckSquare />}
-        </div>
-
-        <div className="border-niceblue" onClick={onClick}>
-          {!done && <BsSquare />}
-        </div>
+    <div className="mr-4">
+      <div className="text-2xl" onClick={onClick}>
+        {done && (
+          <FontAwesomeIcon icon={faSquareCheck} style={{ color: "#0ea5e9" }} />
+        )}
       </div>
-    </IconContext.Provider>
+
+      <div className="text-2xl border-niceblue" onClick={onClick}>
+        {!done && (
+          <FontAwesomeIcon icon={faSquare} style={{ color: "white" }} />
+        )}
+      </div>
+    </div>
   );
 };
 
